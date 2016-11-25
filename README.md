@@ -1,4 +1,4 @@
-# mystic_square
+# sliding_game
 simple sliding game in js
 
 My school project
