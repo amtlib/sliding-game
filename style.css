@@ -173,3 +173,21 @@ img[alt="arrow_right"]:hover {
 #clock_container img {
     height: 30px;
 }
+#info_panel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    opacity:0;
+    display: none;
+    text-align: center;
+    font-size: 3.5em;
+    color:white;
+    transition-duration: .5s;
+}
+.info_panel_visible{
+    opacity: 1 !important;
+    display: block !important;
+}

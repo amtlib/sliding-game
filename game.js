@@ -18,12 +18,15 @@ var Game = (function () {
         }
         if (won) {
             setTimeout(function () {
-                alert('Congratulations! You made it! Your time is: ' + Stopwatch.get_hours() + ':' + Stopwatch.get_minutes() + ':' + Stopwatch.get_seconds() + '.' + Stopwatch.get_milliseconds());
+
+                Info.show_message('Congratulations! You made it! Your time is: ' + Stopwatch.get_hours() + ':' + Stopwatch.get_minutes() + ':' + Stopwatch.get_seconds() + '.' + Stopwatch.get_milliseconds());
                 Records.set_record(size, Stopwatch.get_hours(), Stopwatch.get_minutes(), Stopwatch.get_seconds(), Stopwatch.get_milliseconds());
                 Stopwatch.stop_loop();
                 deactivate_sliding();
                 Stopwatch.stop_loop();
-            }, 100)
+
+            }, 100);
+            new Audio('tada.mp3').play();
         }
     }
 
@@ -307,5 +310,6 @@ var Game = (function () {
         , stop_randomize: clear_timeout
         , activate_sliding: activate_sliding
         , randomization_timeout: randomization_timeout
+        , user_won: user_won
     , }
 })()

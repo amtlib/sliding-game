@@ -47,6 +47,15 @@ function init() {
         records_panel.appendChild(x_panel);
     }
     document.querySelector('body').appendChild(records_panel);
+
+    var info_panel = document.createElement('div');
+    info_panel.setAttribute('id', 'info_panel');
+    info_panel.addEventListener('click', function(){
+        document.getElementById('info_panel').classList.remove('info_panel_visible')
+    })
+    document.querySelector('body').appendChild(info_panel);
+
+
     var clock_container = document.createElement('div');
     clock_container.setAttribute('id', 'clock_container');
     document.querySelector('body').appendChild(clock_container);
