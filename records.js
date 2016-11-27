@@ -65,7 +65,11 @@ var Records = (function () {
             var records = get_records(i);
             for (record in records) {
                 var li = document.createElement('li');
-                li.textContent = records[record].getHours() + ':' + records[record].getMinutes() + ':' + records[record].getSeconds() + '.' + records[record].getMilliseconds()
+                var hours = records[record].getHours().toString().length == 1 ? '0'+records[record].getHours() : records[record].getHours();
+                var minutes = records[record].getMinutes().toString().length == 1 ? '0'+records[record].getMinutes() : records[record].getMinutes();
+                var seconds = records[record].getSeconds().toString().length == 1 ? '0'+records[record].getSeconds() : records[record].getSeconds()
+                var milliseconds =  records[record].getMilliseconds().toString().length == 2 ? '0'+records[record].getMilliseconds() : (records[record].getMilliseconds().toString().length == 1 ? '00'+records[record].getMilliseconds() : records[record].getMilliseconds())
+                li.textContent = hours + ':' + minutes + ':' + seconds + '.' + milliseconds
                 document.querySelector('#x' + i + 'x' + i + '_panel ol').appendChild(li);
             }
         }
