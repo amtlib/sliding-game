@@ -6,15 +6,28 @@ function init() {
     arrow_left.setAttribute('alt', 'arrow_left');
     document.querySelector('body').appendChild(arrow_left);
 
+    var image_left = document.createElement('img');
+    image_left.setAttribute('id', 'image_left');
+    image_left.setAttribute('src', 'graphics/graphic1.jpg');
+
+    var image_right = document.createElement('img');
+    image_right.setAttribute('id', 'image_right')
+    image_right.setAttribute('src', 'graphics/graphic2.jpeg')
 
     var image = document.createElement('img');
+    image.setAttribute('id', 'image_center');
     image.setAttribute('src', Game.get_image_source());
     image.onerror = function () {
         Game.set_image_source('graphics/graphic.jpg')
         this.src = 'graphics/graphic.jpg'
     };
     image.setAttribute('alt', 'graphic');
-    document.querySelector('body').appendChild(image);
+    var image_cont = document.createElement('div');
+    image_cont.setAttribute('id', 'image_container')
+    image_cont.appendChild(image_left)
+    image_cont.appendChild(image)
+    image_cont.appendChild(image_right)
+    document.querySelector('body').appendChild(image_cont);
 
     var arrow_right = document.createElement('img');
     arrow_right.setAttribute('src', 'arrow_right.png');

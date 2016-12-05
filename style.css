@@ -5,13 +5,32 @@
     outline: none;
 }
 
-img[alt="graphic"] {
+#image_center,
+#image_left,
+#image_right {
     display: inline-block;
     width: 200px;
     height: 200px;
-    margin: 0 auto;
-    position: static;
-    transition-duration: .5s;
+    position: relative;
+    right:200px;
+    animation-duration: .3s;
+    animation-timing-function:ease;
+}
+.anim_left{
+    animation: anim_right;
+}
+.anim_right{
+    animation: anim_left;
+}
+@keyframes anim_right {
+    100%{
+        right: 400px;
+    }
+}
+@keyframes anim_left {
+    100%{
+        right: 0;
+    }
 }
 
 #image_src {
@@ -173,21 +192,31 @@ img[alt="arrow_right"]:hover {
 #clock_container img {
     height: 30px;
 }
-#info_panel{
+
+#info_panel {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.7);
-    opacity:0;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
     display: none;
     text-align: center;
     font-size: 3.5em;
-    color:white;
+    color: white;
     transition-duration: .5s;
 }
-.info_panel_visible{
+
+.info_panel_visible {
     opacity: 1 !important;
     display: block !important;
+}
+
+#image_container {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap
 }
